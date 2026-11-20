@@ -141,6 +141,7 @@ Each instance of `pdfplumber.PDF` and `pdfplumber.Page` provides access to sever
 - `.images`, each representing an image.
 - `.annots`, each representing a single PDF annotation (cf. Section 8.4 of the [official PDF specification](https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/pdf_reference_1-7.pdf) for details)
 - `.hyperlinks`, each representing a single PDF annotation of the subtype `Link` and having an `URI` action attribute
+- `.links`, each representing a single PDF annotation of the subtype `Link`, enriched with the link's anchor text and a normalized target (see [`link` properties](#link-properties))
 
 Each object is represented as a simple Python `dict`, with the following properties:
 
@@ -252,6 +253,26 @@ my_char_rotation = my_char_ctm.skew_x
 #### Derived properties
 
 Additionally, both `pdfplumber.PDF` and `pdfplumber.Page` provide access to several derived lists of objects: `.rect_edges` (which decomposes each rectangle into its four lines), `.curve_edges` (which does the same for `curve` objects), and `.edges` (which combines `.rect_edges`, `.curve_edges`, and `.lines`). 
+
+#### `link` properties
+
+Each `link` record pairs a `Link` annotation's source-page position and anchor text with a normalized target. Records are never merged: two annotations pointing at the same target still produce two records.
+
+| Property | Description |
+|----------|-------------|
+|`page_number`| Page number on which the link annotation was found.|
+|`anchor_text`| The text beneath the link, extracted via the annotation's `QuadPoints` (one segment per line, segments joined by `"\n"`), falling back to the annotation's `Rect` when `QuadPoints` is absent. Characters covered by overlapping quads are counted only once.|
+|`x0`, `x1`, `top`, `bottom`, `y0`, `y1`, `doctop`, `width`, `height`| The bounding box of the link's clickable area (the union of its quads), using the same coordinate system as all other pdfplumber objects.|
+|`quads`| The clickable regions used for text extraction, as a list of `(x0, top, x1, bottom)` tuples — one per `QuadPoints` quadrilateral, or a single one derived from the annotation's `Rect`.|
+|`target`| A normalized target `dict` (see below).|
+|`object_type`| "link"|
+
+The `target` dictionary always contains a `kind` key:
+
+- `{"kind": "internal", "page_number": ..., "fit": ..., ...}` — a destination within the same document. Direct destinations, `GoTo` actions, and named destinations are all resolved to the 1-based `page_number` in the *original* document, even when `pdfplumber.open(..., pages=[...])` excludes the target page. `fit` is the destination's positioning mode (`"XYZ"`, `"Fit"`, `"FitH"`, `"FitV"`, `"FitR"`, `"FitB"`, `"FitBH"`, or `"FitBV"`), accompanied by its parameters (e.g., `left`/`top`/`zoom` for `XYZ`) in the target page's own PDF coordinate space, and `named` holds the destination name when the link went through a named destination (`None` otherwise).
+- `{"kind": "external", "uri": ...}` — a `URI` action, preserved as-is.
+- `{"kind": "broken", "reason": ...}` — a reference that could not be resolved (e.g., an unknown named destination or a destination that does not reference a page), with the cause in `reason`.
+- `{"kind": "unsupported", "action": ..., "reason": ...}` — an action type pdfplumber does not follow (e.g., `Launch`, `GoToR`, `JavaScript`, `Named`).
 
 #### `image` properties
 

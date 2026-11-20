@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## [Unreleased]
+
+### Added
+- Add `Page.links` and `PDF.links`, returning one record per `Link` annotation with the link's anchor text (extracted via `QuadPoints`, falling back to `Rect`), source-page coordinates, and a normalized target. Direct destinations, `GoTo` actions, and named destinations are resolved to page numbers in the original document (unaffected by any `pages=` filter); external URIs are preserved as-is; unresolvable references are marked `broken` and unfollowed action types `unsupported`, each with a reason. The existing `.annots` and `.hyperlinks` interfaces are unchanged.
+
 ## [0.11.10] — 2026-06-14
 
 ### Changed

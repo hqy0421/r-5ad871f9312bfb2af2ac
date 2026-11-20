@@ -1,0 +1,109 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R /Names << /Dests << /Names [ (sec.appendix) [6 0 R /FitH 700] ] >> >> /Dests << /old.chapter [5 0 R /Fit] >> >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 5 0 R 6 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R /Annots [10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R] >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+7 0 obj
+<< /Length 623 >>
+stream
+BT /F1 12 Tf 72 700 Td (URI: visit example dot com now) Tj ET
+BT /F1 12 Tf 72 680 Td (See the full appendix table) Tj ET
+BT /F1 12 Tf 72 660 Td (for all details here) Tj ET
+BT /F1 12 Tf 72 640 Td (Jump to named section) Tj ET
+BT /F1 12 Tf 72 620 Td (Old style named dest) Tj ET
+BT /F1 12 Tf 72 600 Td (This goes nowhere fast) Tj ET
+BT /F1 12 Tf 72 580 Td (Launch the thing) Tj ET
+BT /F1 12 Tf 72 560 Td (Remote file link) Tj ET
+BT /F1 12 Tf 72 540 Td (Same target again) Tj ET
+BT /F1 12 Tf 72 520 Td (Overlap dedupe test) Tj ET
+BT /F1 12 Tf 72 500 Td (No action here) Tj ET
+BT /F1 12 Tf 72 480 Td (Bad object target) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Length 55 >>
+stream
+BT /F1 12 Tf 72 700 Td (Chapter one target page) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Length 47 >>
+stream
+BT /F1 12 Tf 72 720 Td (Appendix target) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Annot /Subtype /Link /Rect [108 697 259.2 709] /Border [0 0 0] /A << /S /URI /URI (https://example.com/docs?a=1&b=2) >> >>
+endobj
+11 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 657 266.4 689] /QuadPoints [72 689 266.4 689 72 677 266.4 677 72 669 180 669 72 657 180 657] /Border [0 0 0] /A << /S /GoTo /D [6 0 R /XYZ 72 720 null] >> >>
+endobj
+12 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 637 223.2 649] /Border [0 0 0] /Dest (sec.appendix) >>
+endobj
+13 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 617 216 629] /Border [0 0 0] /Dest (old.chapter) >>
+endobj
+14 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 597 230.4 609] /Border [0 0 0] /Dest (missing.dest) >>
+endobj
+15 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 577 187.2 589] /Border [0 0 0] /A << /S /Launch /F (run.exe) >> >>
+endobj
+16 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 557 187.2 569] /Border [0 0 0] /A << /S /GoToR /F (other.pdf) /D [0 /Fit] >> >>
+endobj
+17 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 537 194.4 549] /Border [0 0 0] /Dest [6 0 R /XYZ 72 720 null] >>
+endobj
+18 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 517 172.8 529] /QuadPoints [72 529 122.4 529 72 517 122.4 517 72 529 172.8 529 72 517 172.8 517] /Border [0 0 0] /A << /S /GoTo /D [5 0 R /Fit] >> >>
+endobj
+19 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 497 172.8 509] /Border [0 0 0]  >>
+endobj
+20 0 obj
+<< /Type /Annot /Subtype /Link /Rect [72 477 194.4 489] /Border [0 0 0] /A << /S /GoTo /D [3 0 R /Fit] >> >>
+endobj
+xref
+0 21
+0000000000 65535 f 
+0000000009 00000 n 
+0000000167 00000 n 
+0000000236 00000 n 
+0000000304 00000 n 
+0000000517 00000 n 
+0000000643 00000 n 
+0000000769 00000 n 
+0000001442 00000 n 
+0000001546 00000 n 
+0000001642 00000 n 
+0000001791 00000 n 
+0000002006 00000 n 
+0000002118 00000 n 
+0000002227 00000 n 
+0000002339 00000 n 
+0000002463 00000 n 
+0000002600 00000 n 
+0000002722 00000 n 
+0000002929 00000 n 
+0000003021 00000 n 
+trailer
+<< /Size 21 /Root 1 0 R >>
+startxref
+3146
+%%EOF

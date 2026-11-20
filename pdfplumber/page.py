@@ -33,6 +33,7 @@ from pdfminer.psparser import PSLiteral
 from . import utils
 from ._typing import T_bbox, T_num, T_obj, T_obj_list
 from .container import Container
+from .links import get_links
 from .structure import PDFStructTree, StructTreeMissing
 from .table import T_table_settings, Table, TableFinder, TableSettings
 from .utils import decode_text, resolve_all, resolve_and_decode
@@ -338,6 +339,14 @@ class Page(Container):
     @property
     def hyperlinks(self) -> T_obj_list:
         return [a for a in self.annots if a["uri"] is not None]
+
+    @property
+    def links(self) -> T_obj_list:
+        """Return one record per ``Link`` annotation, each pairing the
+        anchor text and source-page coordinates with a normalized target
+        (internal page number and fit mode, external URI, or a
+        broken/unsupported marker with a reason). See ``links.py``."""
+        return get_links(self)
 
     @property
     def objects(self) -> Dict[str, T_obj_list]:

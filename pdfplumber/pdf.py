@@ -191,6 +191,11 @@ class PDF(Container):
         return list(itertools.chain(*gen))
 
     @property
+    def links(self) -> List[Dict[str, Any]]:
+        gen = (p.links for p in self.pages)
+        return list(itertools.chain(*gen))
+
+    @property
     def structure_tree(self) -> List[Dict[str, Any]]:
         """Return the structure tree for the document."""
         try:
